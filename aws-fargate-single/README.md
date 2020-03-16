@@ -21,11 +21,12 @@ This deployment helps you to spin up a long-running single node container via AW
 - `cd ..`
 
 1. Manual changes
-- check/update s3 backend key, based on the output of the base infrastrcuture (provider.tf)
-- update ECR docker images: app_image (vars.tf)
+
+- Update s3 backend bucket name, based on the output above (provider.tf)
+- update variables: app_image, arc_image, ecs_s3_bucket  (vars.tf)
+
 - manually create entries for AWS Access Key and AWS Secret Key in AWS Secrets Manager
 - update secret ARNs accordingly (run.sh)
-- don't want to setup the secrets? removed the parameters (run.sh, ecs.tf, templates/ecs/arc_app.json.tpl)
 
 2. `terraform init`
 3. `./run.sh` 

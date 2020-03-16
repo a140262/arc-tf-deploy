@@ -1,7 +1,7 @@
 #!/bin/bash
 
-S3_SECRET_ARN=arn:aws:secretsmanager:[YOUR_AWS_REGION]:[YOUR_ACCOUNT_ID]:secret:ETL_CONF_S3A_SECRET_KEY-xxx
-S3_KEY_ARN=arn:aws:secretsmanager:[YOUR_AWS_REGION]:[YOUR_ACCOUNT_ID]:secret:ETL_CONF_S3A_ACCESS_KEY-xxx
+S3_SECRET_ARN=arn:aws:secretsmanager:ap-southeast-2:[YOUR_ACCOUNT_ID]:secret:ETL_CONF_S3A_SECRET_KEY-xxxx
+S3_KEY_ARN=arn:aws:secretsmanager:ap-southeast-2:[YOUR_ACCOUNT_ID]:secret:ETL_CONF_S3A_ACCESS_KEY-xxx
 # KMS_ARN=arn:aws:kms:ap-southeast-2:[ACCOUNT_ID]:key/xxxxx
 
 # start remote machines and job

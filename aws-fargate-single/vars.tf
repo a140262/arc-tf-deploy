@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "app_image" {
   description = "Docker image to run in the ECS cluster"
-  default     = "[YOUR_ACCOUNT_ID].dkr.ecr.ap-southeast-2.amazonaws.com/arc-jupyter:athena_scala_2.12"
+  default     = "[YOUR_ACCOUNT_ID]].dkr.ecr.ap-southeast-2.amazonaws.com/arc-jupyter:athena_scala_2.12"
 }
 
 variable "container_name" {
@@ -13,6 +13,17 @@ variable "container_name" {
   default     = "arc-jupyter"
 }
 
+
+variable "arc_image" {
+  description = "Docker image to run ARC ETL as an ECS task"
+  default     = "[YOUR_ACCOUNT_ID].dkr.ecr.ap-southeast-2.amazonaws.com/arc:athena_scala_2.12"
+}
+
+
+variable "arc_container_name" {
+  description = "Docker Container name for ARC ETL"
+  default     = "arc-etl"
+}
 
 variable "app_port" {
   description = "Port exposed by the docker image to redirect traffic to"
@@ -53,6 +64,12 @@ variable "fargate_memory" {
   default     = "2048"
 }
 
+
+variable "ecs_s3_bucket" {
+  description = "s3 bucket name used by the ecs task"
+  default     = "testtestmelody"
+}
+
 variable "access_secret_arn" {
   description = "secret manager Arn for s3 access secret"
   default     = "blahblah"
@@ -62,22 +79,6 @@ variable "access_key_arn" {
   description = "secret manager Arn for s3 access key"
   default     = "blahblah"
 }
-
-variable "ecs_s3_bucket" {
-  description = "s3 bucket name used by the ecs task"
-  default     = "testtestmelody"
-}
-
-variable "arc_image" {
-  description = "Docker image to run ARC ETL as an ECS task"
-  default     = "[YOUR_ACCOUNT_ID].dkr.ecr.ap-southeast-2.amazonaws.com/arc:athena_scala_2.12"
-}
-
-variable "arc_container_name" {
-  description = "Docker Container name for ARC ETL"
-  default     = "arc-etl"
-}
-
 
 # variable "kms_arn" {
 #   description = "s3 KMS arn"
